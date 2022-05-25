@@ -25,7 +25,7 @@ def desenha_grafico_resultados(objetos):
     graficos.ylabel("Nome dos participantes")
     graficos.xlabel("Pontuação")
 
-    graficos.savefig('static/portfolio/images/grafico_final_output.png')
+    graficos.savefig('portfolio/static/portfolio/images/grafico_final.png')
 
 
 def QuizzPontuacao(input):
