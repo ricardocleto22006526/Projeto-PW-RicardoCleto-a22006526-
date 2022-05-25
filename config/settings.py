@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
+#Para deploy
+from environs import Env
 
 #Necessario para as imagens
 import os
@@ -22,13 +24,18 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
+#Para deploy
+env = Env()
+env.read_env()
+
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-s2s8ejex^0_5vu*1k!9c-l*=9=-(s30ods(17k7t^jr-#alvpi'
+SECRET_KEY = env.str("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env.bool("DEBUG", default=False)
 
-ALLOWED_HOSTS = []
+
+ALLOWED_HOSTS = ['.herokuapp.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -139,3 +146,5 @@ CLOUDINARY_STORAGE = {
   'API_KEY': "935988236628896",
   'API_SECRET': "3DOtbD6_vdLOZbtCzIPrJqvq2rk",
 }
+
+
