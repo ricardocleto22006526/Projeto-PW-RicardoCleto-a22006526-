@@ -5,7 +5,7 @@ def informacao_sobre_utilizadores(objetos):
     dados = {}
     for quizz in objetos:
         dados[quizz.nome] = QuizzPontuacao(quizz)
-
+        print(quizz.nome)
     return dados
 
 
