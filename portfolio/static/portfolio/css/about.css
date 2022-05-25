@@ -1,0 +1,113 @@
+.container {
+    display: block;
+    background-size: 100% 100%;
+    background-color: seagreen;
+    background-repeat: repeat;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.divRetangulos{
+   display: grid;
+   grid-template-columns: repeat(1, 1fr);
+   grid-template-rows: repeat(1, 100px);
+   margin-top: 80px;
+   margin-left: 20px;
+   padding: 30px;
+}
+
+.divRetangulos div{
+    width: 95%;
+    height: 715px;
+    box-shadow: 5px 2px 3px 7px black;
+    border-radius: 10px;
+    background-color: LightGray;
+    padding: 20px;
+    margin: 7px;
+}
+
+.divRetangulos img{
+    display: flex;
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+    margin-left: 20px;
+    margin-top: 50px;
+}
+
+.textoDentroDivRetangulos h3{
+    text-align: left;
+    margin-left: 50px;
+    font-size: 37px;
+    margin-top: 15px;
+}
+
+.textoDentroDivRetangulos p{
+    position: relative;
+    text-align: left;
+    display: flex;
+    margin-left: 350px;
+    bottom: 300px;
+}
+
+.textoDentroDivRetangulos li{
+    position: relative;
+    text-align: left;
+    display: flex;
+    margin-left: 375px;
+    bottom: 290px;
+}
+
+.textoDentroDivRetangulos .spanWhite{
+    color: LightGray;
+}
+
+.spanTitleColor{
+    color: seagreen;
+    font-weight: bold;
+}
+
+.skills ~ li:nth-child(n){
+    margin-left: 370px;
+    margin-top: 0px;
+    left: 25px;
+}
+
+.Socials{
+    margin-top: 20px;
+}
+
+.Socials a {
+    margin-left: 5px;
+    color: DarkGreen;
+}
+
+.Socials a:hover {
+    color: DarkTurquoise;
+}
+
+.divisoria{
+    margin-left: 5px;
+    color: seagreen;
+}
+
+.transfFormacao a{
+    margin-left: 2px;
+    margin-left: 5px;
+        color: DarkGreen;
+}
+
+.transfFormacao a:hover{
+    color: DarkTurquoise;
+}
+
+.Socials .NoClass{
+    color: DarkGreen;
+}
+
+.Socials .NoClass:hover{
+    color: DarkGreen;
+}
+

@@ -1,0 +1,46 @@
+{% extends 'portfolio/layout.html' %}
+
+{% block style %}
+
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'portfolio/css/blog.css' %}"/>
+
+{% endblock style %}
+
+{% block main %}
+
+<div class="container">
+    <div class="divRetangulos">
+
+        <a href="{% url 'portfolio:nova' %}" class="btn1" >Criar Post</a>
+
+        {% for posts in post %}
+
+            <div>
+
+                <!--- ><p>ID: {{posts.id}}</p> --->
+
+                <p>{{posts.autor}}</p>
+
+                <p>{{posts.titulo}}</p>
+
+                <p>{{posts.descricao}}</p>
+
+                <br>
+                {% if posts.link %}
+                    <p>Link: <a href="{{posts.link}}">{{posts.link}}</a></p>
+                {% endif %}
+
+                <p>Data: {{posts.data}}</p>
+
+                <a href="{% url 'portfolio:edita' posts.id %}" class="editar">Editar</a> <a href="{% url 'portfolio:apaga' posts.id %}" class="apagar">Apagar</a>
+
+            </div>
+
+        {% endfor %}
+
+    </div>
+</div>
+
+
+{% endblock main %}

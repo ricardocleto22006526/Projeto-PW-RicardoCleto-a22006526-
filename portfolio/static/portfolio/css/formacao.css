@@ -1,0 +1,130 @@
+.container{
+    display: block;
+    background-size: 100% 100%;
+    background-color: seagreen;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.divRetangulos{
+   display: grid;
+   grid-template-columns: repeat(1, 1fr);
+   grid-template-rows: repeat(1, auto);
+   margin-top: 125px;
+   margin-left: 20px;
+   padding: 30px;
+   gap: 30px;
+}
+
+.divRetangulos div{
+    width: 95%;
+    height: 450px;
+    box-shadow: 5px 2px 3px 7px black;
+    border-radius: 10px;
+    background-color: LightGray;
+    padding: 20px;
+    margin: 7px;
+
+}
+
+.textoDentroDivRetangulos h3{
+    text-align: center;
+}
+
+.textoDentroDivRetangulos p{
+    text-align: left;
+    display: inline-block;
+
+}
+
+.textoDentroDivRetangulos .spanWhite{
+    color: LightGray;
+}
+
+.textoDentroDivRetangulos ol{
+   margin-left: 50px;
+}
+
+.textoDentroDivRetangulos h4{
+   margin-left: 20px;
+}
+
+.colorizedSpanTitulo{
+    color: seagreen;
+}
+
+
+.colorizedSpanECTS{
+    color: Black;
+}
+
+
+.whiteSpan{
+    color: LightGray;
+}
+
+.infoExtra{
+    color: white;
+    margin-left: 70px;
+}
+
+.infoExtra a{
+    color: aquamarine;
+}
+
+.infoExtra a:hover{
+    color: white;
+}
+
+.divRetangulos div .semestres{
+    background-color: GreenYellow;
+    position: relative;
+    width: 550px;
+    height: 200px;
+    margin-left: 2%;
+}
+
+.divRetangulos div .semestres2{
+    background-color: GreenYellow;
+    position: relative;
+    width: 550px;
+    height: 200px;
+    margin-left: 54%;
+    bottom: 55%;
+}
+
+.backgroundRelativo{
+    position: relative;
+}
+
+.SubtitulotitulosCadaAno{
+   font-size: 20px;
+}
+
+.tituloCadaAno{
+   font-size: 25px;
+}
+
+.divRetangulos div .semestres a{
+    color: Black;
+}
+
+.divRetangulos div .semestres2 a{
+    color: Black;
+}
+
+.divRetangulos div .semestres a:hover{
+    color: White;
+}
+
+.divRetangulos div .semestres2 a:hover{
+    color: White;
+}
+
+.divisoria{
+    margin-left: 5px;
+    color: Black;
+}
+

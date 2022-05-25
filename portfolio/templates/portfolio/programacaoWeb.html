@@ -1,0 +1,109 @@
+{% extends 'portfolio/layout.html' %}
+
+{% block style %}
+
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'portfolio/css/programacaoWeb.css' %}"/>
+
+{% endblock style %}
+
+
+{% block main %}
+
+<div class="container">
+
+    <h1> Noticias </h1>
+
+    <div class="divRetangulos">
+
+        {% for noticia in noticias %}
+
+            <div class="textoDentroDivRetangulos">
+
+                <h3> <u> {{ noticia.titulo }} </u> </h3>
+
+                <br>
+
+                <div class="divImage">
+                    {% load static %}
+                    <img src="{{ noticia.imagem.url }}" alt="ERROR" style="margin-left: 8%;" width="300" height="300">
+                </div>
+
+                <br><br>
+
+                <p>
+                    {{ noticia.descricao }}
+                </p>
+
+                <br><br>
+
+                <p> <span> Link da noticia: <a href="{{ noticia.link_noticia }}" class="linkGitHub"> Click here </a> </span>  </p>
+
+            </div>
+        {% endfor %}
+    </div>
+
+    <h1> Laboratórios </h1>
+
+    <div class="divRetangulos">
+        <center>
+            <div style="margin-left: 65%;">
+                    <a href="https://a22006526-pw-lab2.herokuapp.com/">Click here to check the Laboratories</a>
+            </div>
+        </center>
+    </div>
+
+    <h1> Tecnologias </h1>
+
+    <div class="divRetangulos">
+
+        {% for tecnologia in tecnologias %}
+
+            <div class="textoDentroDivRetangulos">
+
+                <h3> <u> {{ tecnologia.nome }} ➯ {{ tecnologia.acronimo }} </u> </h3>
+
+                <br>
+
+                <div class="divImage">
+                    {% load static %}
+                    <img src="{{ tecnologia.logotipo.url }}" alt="ERROR" style="margin-left: 8%;" width="300" height="300">
+                </div>
+
+                <br><br>
+
+                <p>
+                    {{ tecnologia.descricao }}
+                </p>
+
+                <br><br>
+
+                <p>
+                    <span> Criador: </span> {{ tecnologia.criador }}
+                </p>
+
+                <br><br>
+
+                <p>
+                    <span> Ano de criação: </span> {{ tecnologia.ano_criacao }}
+                </p>
+
+                <br><br>
+
+                <p> <span> Link Oficial: <a href="{{ tecnologia.link_oficial }}" class="linkGitHub"> Click here </a> </span>  </p>
+
+            </div>
+        {% endfor %}
+    </div>
+
+    <h1> Diagrama Entidade Relação (DER)</h1>
+
+    <div class="divRetangulos">
+        <div class="Diagrama">
+            {% load static %}
+            <img src="../static/portfolio/images/Diagrama_DER.png" alt="ERROR" width="1000" height="550">
+        </div>
+    </div>
+</div>
+
+{% endblock main %}

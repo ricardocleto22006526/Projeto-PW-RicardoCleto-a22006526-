@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Portfolio</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Secular+One&display=swap" rel="stylesheet">
+
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'portfolio/css/layout.css' %}"/>
+
+    {% block style %}{% endblock style %}
+
+
+</head>
+
+<body>
+
+    <!--- TASK BAR COMUM A TODOS OS FICHEIROS--->
+    <header class="header1">
+        <div class="hero">
+            <nav>
+                <h2 class="logo">Ricardo <span>Cleto</span></h2>
+
+                <ul>
+                    <li> <a href="{% url 'portfolio:home' %}">Home</a> </li>
+                    <li> <a href="{% url 'portfolio:programacaoWeb' %}">ProgramaçãoWeb</a> </li>
+                    <li> <a href="{% url 'portfolio:quizz' %}">Quizz</a> </li>
+                    <li> <a href="{% url 'portfolio:formação' %}">Formação</a> </li>
+                    <li> <a href="{% url 'portfolio:projetos' %}">Projetos</a> </li>
+                    <li> <a href="{% url 'portfolio:blog' %}">Blog</a> </li>
+                    <li> <a href="{% url 'portfolio:sobre' %}">About Me</a> </li>
+                </ul>
+                <a href="" class="btn">Login</a>
+            </nav>
+        </div>
+    </header>
+    <!---
+    <header class="header">
+        <div>
+            <h1>Ricardo Cleto </h1>
+        </div>
+
+        <nav>
+            <a href="{% url 'portfolio:index' %}">Página Inicial</a>
+
+            <a href="{% url 'portfolio:home' %}">Home</a>
+            <a href="{% url 'portfolio:apresentação' %}">Apresentação</a>
+            <a href="{% url 'portfolio:competencias' %}">Competencias</a>
+            <a href="{% url 'portfolio:formação' %}">Formação</a>
+            <a href="{% url 'portfolio:projetos' %}">Projetos</a>
+            <a href="{% url 'portfolio:sobre' %}">About</a>
+        </nav>
+    </header>
+
+    -->
+
+	<main>
+        {% block main %}
+
+        {% endblock main %}
+    </main>
+
+
+    <footer>
+        <div class="footerBackground">
+           ULHT 2022 ©
+        </div>
+    </footer>
+
+</body>
+</html>
+

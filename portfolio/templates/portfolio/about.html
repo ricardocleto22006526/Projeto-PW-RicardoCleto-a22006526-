@@ -1,0 +1,88 @@
+{% extends 'portfolio/layout.html' %}
+
+{% block style %}
+
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'portfolio/css/about.css' %}"/>
+
+{% endblock style %}
+
+
+{% block main %}
+
+<div class="container">
+    <div class="divRetangulos">
+
+        <div class="textoDentroDivRetangulos">
+
+            <h3> <u> Ricardo Cleto</u> 👋🏼 </h3>
+
+            <img src="../static/portfolio/images/Ricardo.jpg" alt="ERROR">
+
+            <p class="transfFormacao">
+                Olá, o meu nome é Ricardo, sou aluno do 2º ano e estou a estudar
+                <a href="{% url 'portfolio:formação'%}"> Engenharia Informática na Universidade Lusófona</a>.
+            </p>
+
+            <br>
+
+            <p class="transfFormacao">
+                Já joguei Semi-Profissionalmente CS:GO (Counter-Strike: Global Offensive) pela equipa Oro Esports e
+                representei a equipa em torneios online
+            </p>
+
+            <br>
+
+            <p>
+                 Estudei em várias escolas presentes no Agrupamento de Escolas de Sampaio:
+            </p>
+
+            <li>➥ Escola Básica de Sampaio</li>
+            <li>➥ Escola Secundária de Sampaio</li>
+
+            <br>
+
+            <p>
+                <span class="spanTitleColor">Apdidões:</span>
+                <li> Linguagens de Programação:</li>
+            </p>
+
+            <p class="skills">
+                <li> ➥ Java </li>
+                <li> ➥ Kotlin </li>
+                <li> ➥ C </li>
+                <li> ➥ C# </li>
+                <li> ➥ Python </li>
+            </p>
+
+            <br>
+
+            <p>
+                <span class="spanTitleColor">Competências:</span>
+            </p>
+
+            <p class="skills">
+                <li> ➥ Social Skills </li>
+                <li> ➥ Trabalhos em Grupo </li>
+                <li> ➥ Criativo </li>
+                <li> ➥ Motivacional </li>
+                <li> ➥ 2 Línguas (Idiomas): Português (Nativo) , Inglês (Fluente) </li>
+            </p>
+
+            <p class="Socials">
+                <span class="spanTitleColor"> Contact me here: </span>
+                <a href="https://www.linkedin.com/in/ricardo-cleto-8114b5208/"> LinkedIn  </a>
+                <span class="divisoria"> | </span>
+                <a href="https://github.com/ricardocleto22006526">GitHub</a>
+                <span class="divisoria"> | </span>
+                <a href="../../static/portfolio/images/CV.png" target="_blank">Verifique o meu CV</a>
+                <span class="divisoria"> | </span>
+                <a class="NoClass">Email: a22006526@alunos.ulht.pt</a>
+            </p>
+
+        </div>
+
+    </div>
+</div>
+
+{% endblock main %}

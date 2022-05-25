@@ -1,0 +1,86 @@
+.container{
+    display: block;
+    background-size: 100% 100%;
+    background-color: seagreen;
+    background-position: center;
+    background-size: 100% 100%;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.divRetangulos{
+   display: grid;
+   grid-template-columns: repeat(1, 1fr);
+   grid-template-rows: repeat(1, 100px);
+   margin-top: 80px;
+   margin-left: 20px;
+   padding: 30px;
+   gap: 17px;
+}
+
+.divRetangulos div{
+    width: 95%;
+    height: auto;
+    box-shadow: 5px 2px 3px 7px black;
+    border-radius: 10px;
+    background-color: LightGray;
+    padding: 20px;
+    margin: 7px;
+}
+
+.btn1{
+    background-color: #84f14e;
+    color: Black;
+    text-decoration: none;
+    border: 2px solid transparent;
+    font-weight: bold;
+    border-radius: 30px;
+    transition: transform .7s;
+    margin-left: 600px;
+    margin-right: 600px;
+    margin-bottom: 5px;
+    padding-top: 35px;
+    text-align: center;
+}
+
+.btn1:hover{
+    transform: scale(1.1);
+}
+
+.divRetangulos div p{
+    margin-left: 25px;
+}
+
+.divRetangulos div .editar{
+    margin-left: 95%;
+    color: #00b300;
+}
+
+
+.divRetangulos div .apagar{
+    margin-left: 95%;
+    color: #00b300;
+}
+
+
+.divRetangulos div p:nth-child(1){
+    margin-left: 15px;
+    font-size: 27px;
+}
+
+.divRetangulos div p:nth-child(2){
+    margin-left: 20px;
+    font-size: 20px;
+}
+
+.divRetangulos div p:nth-child(3){
+    margin-left: 30px;
+    font-size: 15px;
+}
+
+
+
+
+

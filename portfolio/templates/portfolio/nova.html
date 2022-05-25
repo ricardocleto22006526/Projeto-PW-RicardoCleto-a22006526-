@@ -1,0 +1,24 @@
+{% block style %}
+
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'portfolio/css/nova.css' %}"/>
+
+{% endblock style %}
+
+{% block main %}
+
+<div class="container">
+    <div class="divRetangulos">
+        <div>
+            <h3>Crie um novo Post!!!</h3>
+            <br><br><br>
+            <form action="" method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <a href="{% url 'portfolio:blog' %}" role="button" class="btnCancel">Cancelar</a>
+                <input type="submit" value="Gravar" class="btnSubmit">
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

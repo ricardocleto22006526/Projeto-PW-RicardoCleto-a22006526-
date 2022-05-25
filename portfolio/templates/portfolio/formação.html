@@ -1,0 +1,70 @@
+{% extends 'portfolio/layout.html' %}
+
+{% block style %}
+
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'portfolio/css/formacao.css' %}"/>
+
+{% endblock style %}
+
+
+{{% block main %}
+
+<div class="container">
+    <div class="divRetangulos">
+
+        {% for formation in formacao %}
+
+            <div class="textoDentroDivRetangulos">
+
+                <h3 class="tituloCadaAno"> <u> {{formation.ano}}º Ano </u> </h3>
+
+                <br>
+
+                <p>
+                    <center class="SubtitulotitulosCadaAno"> <span class="colorizedSpanTitulo">  Plano de Estudos: </span> </center>
+
+                    <br>
+
+                    <p class="backgroundRelativo">
+                        <div class="semestres">
+
+                            <h4>1º Semestre</h4>
+
+                            <ol>
+                                {% for cadeiras in formation.cadeiras.all %}
+                                    {% if cadeiras.semestre == 1 %}
+                                        <li> <a href="{{ cadeiras.link_cadeira }}">{{ cadeiras }}</a> <span class="divisoria"> | </span> <span class="colorizedSpanECTS"> ({{ cadeiras.ects }}ECTS) <span class="divisoria"> | </span> {{ cadeiras.avaliacao }} </span> </li>
+                                    {% endif %}
+                                {% endfor %}
+                            </ol>
+                            <u style="margin-left: 50px;">Total:</u> {{ formation.total_ects }} ECTS
+                        </div>
+
+                        <div class="semestres2">
+
+                            <h4>2º Semestre</h4>
+
+                            <ol>
+                                {% for cadeiras in formation.cadeiras.all %}
+                                    {% if cadeiras.semestre == 2 %}
+                                        <li> <a href="{{ cadeiras.link_cadeira }}">{{ cadeiras }}</a> <span class="divisoria"> | </span> <span class="colorizedSpanECTS"> ({{ cadeiras.ects }}ECTS) <span class="divisoria"> | </span> {{ cadeiras.avaliacao }} </span> </li>
+                                    {% endif %}
+                                {% endfor %}
+                            </ol>
+                            <u style="margin-left: 50px;">Total:</u> {{ formation.total_ects }} ECTS
+                        </div>
+                    </p>
+                </p>
+            </div>
+        {% endfor %}
+    </div>
+
+    <p class="infoExtra">
+        Caso necessite de mais informações, consulte:
+        <a href="https://www.ulusofona.pt/licenciaturas/engenharia-informatica">Engenharia Informática Lusófona</a>
+    </p>
+
+</div>
+
+{% endblock main %}

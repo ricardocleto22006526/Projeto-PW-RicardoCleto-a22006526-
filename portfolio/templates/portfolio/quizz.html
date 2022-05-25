@@ -1,0 +1,39 @@
+{% extends 'portfolio/layout.html' %}
+
+{% block style %}
+
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'portfolio/css/quizz.css' %}"/>
+
+{% endblock style %}
+
+{% block main %}
+
+<div class="container">
+
+
+    <div class="divRetangulos">
+        <div class="post">
+
+            <form action="" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" value="Submeta o quizz!" class="btnSubmit">
+            </form>
+        </div>
+
+    </div>
+
+    <div class="divRetangulos">
+
+        <div class="post2">
+            {% load static %}
+            <img src="/static/portfolio/images/grafico_final.png">
+        </div>
+        <!--- /static/portfolio/images/grafico_final.png --->
+    </div>
+
+</div>
+
+
+{% endblock %}

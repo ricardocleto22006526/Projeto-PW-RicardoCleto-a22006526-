@@ -1,0 +1,68 @@
+{% extends 'portfolio/layout.html' %}
+
+{% block style %}
+
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'portfolio/css/projetos.css' %}"/>
+
+{% endblock style %}
+
+
+{% block main %}
+
+<div class="container">
+    <div class="divRetangulos">
+
+        {% for projetosS in projetos %}
+
+            <div class="textoDentroDivRetangulos">
+
+                <h3> <u> {{projetosS.nome_do_projeto}} </u> </h3>
+
+                <br>
+                <div class="divImage">
+                    {% load static %}
+                    <img src="{{projetosS.imagem.url}}" alt="ERROR" style="margin-left: 8%;" width="300" height="300">
+                </div>
+                <br><br>
+
+                <p>
+                    <span> Descrição: </span>
+                    {{projetosS.descricao}}
+                </p>
+
+                <br><br>
+
+                <p>
+                    <span> Cadeira: </span> {{projetosS.cadeira}}
+                </p>
+
+                <br><br>
+
+                <p>
+                    <span> Ano de realização: </span> {{projetosS.ano_realizacao}}
+                </p>
+
+                <br><br>
+
+                <p>
+                    <span> Participantes: </span>
+                        {% for pessoas in projetosS.participantes.all %}
+                            <ol>
+                                <ol class="tabNomes">➥ {{ pessoas }} </ol>
+                            </ol>
+                        {% endfor %}
+                </p>
+
+                <br>
+
+                <p> <span> Download (or GitHub): <a href="{{projetosS.link_github}}" class="linkGitHub"> Click here </a> </span>  </p>
+
+            </div>
+        {% endfor %}
+
+    </div>
+
+</div>
+
+{% endblock main %}
