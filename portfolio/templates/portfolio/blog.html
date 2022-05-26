@@ -34,7 +34,7 @@
                 <p>Data: {{posts.data}}</p>
 
                 {% if not user.is_authenticated %}
-                    <a href="{% url 'portfolio:login' %}"></a>
+                    <a href="{% url 'portfolio:login' %}" class="logar">Logue para realizar alterações</a>
                 {% endif %}
 
                 {% if user.is_authenticated %}
