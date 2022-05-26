@@ -30,7 +30,7 @@
     margin: 7px;
 }
 
-.btn1{
+.btnCriaPost{
     background-color: #84f14e;
     color: Black;
     text-decoration: none;
@@ -38,8 +38,9 @@
     font-weight: bold;
     border-radius: 30px;
     transition: transform .7s;
-    margin-left: 600px;
-    margin-right: 600px;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: 5px;
     padding-top: 35px;
     text-align: center;
