@@ -72,10 +72,13 @@
 
 
     height: auto;
-    --width: 350px;
     position: relative;
     margin-left: 20%;
 }
 
+.textoDentroDivRetangulos div img{
+    width: 50%;
+    margin: 0 auto;
+}
 
 
