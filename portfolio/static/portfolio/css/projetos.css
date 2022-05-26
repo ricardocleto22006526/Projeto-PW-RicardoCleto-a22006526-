@@ -69,15 +69,16 @@
 .textoDentroDivRetangulos div{
     width: 50%;
     margin: 0 auto;
-
-
     height: auto;
     position: relative;
     margin-left: 20%;
 }
 
-.textoDentroDivRetangulos div img{
-    margin: 0 auto;
-}
 
+@media (min-width: 1500px) {
+    textoDentroDivRetangulos div img{
+        height: 300px;
+        width: 500px;
+    }
+}
 
