@@ -98,3 +98,19 @@ footer {
     top: 0;
     z-index: 5;
 }
+
+.btnLogout{
+    background-color: OrangeRed;
+    color: white;
+    text-decoration: none;
+    border: 2px solid transparent;
+    font-weight: bold;
+    padding: 10px 25px;
+    border-radius: 30px;
+    transition: transform .7s;
+}
+
+.btnLogout:hover{
+    transform: scale(1.1);
+}
+

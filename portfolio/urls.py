@@ -19,4 +19,6 @@ urlpatterns = [
     path('apaga/<int:post_id>', views.view_apaga_post, name='apaga'),
     path('quizz', views.quizz_view, name='quizz'),
     path('programacaoWeb', views.programacaoWeb_view, name='programacaoWeb'),
+    path('login', views.login_view, name='login'),
+    path('logout', views.logout_view, name='logout'),
 ]

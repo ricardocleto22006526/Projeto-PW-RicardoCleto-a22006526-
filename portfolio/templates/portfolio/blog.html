@@ -33,7 +33,14 @@
 
                 <p>Data: {{posts.data}}</p>
 
-                <a href="{% url 'portfolio:edita' posts.id %}" class="editar">Editar</a> <a href="{% url 'portfolio:apaga' posts.id %}" class="apagar">Apagar</a>
+                {% if not user.is_authenticated %}
+                    <a href="{% url 'portfolio:login' %}"></a>
+                {% endif %}
+
+                {% if user.is_authenticated %}
+                    <a href="{% url 'portfolio:edita' posts.id %}" class="editar">Editar</a> <a href="{% url 'portfolio:apaga' posts.id %}" class="apagar">Apagar</a>
+                {% endif %}
+
 
             </div>
 

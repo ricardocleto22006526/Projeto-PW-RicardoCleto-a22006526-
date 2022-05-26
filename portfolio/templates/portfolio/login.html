@@ -1,0 +1,33 @@
+{% extends 'portfolio/layout.html' %}
+
+{% block style %}
+
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'portfolio/css/login.css' %}"/>
+
+{% endblock style %}
+
+{% block main %}
+
+<div class="container">
+    <div class="divRetangulos">
+        <div>
+            <h3>Realize o seu login</h3>
+            <br><br><br>
+
+            <form action="{% url 'portfolio:login' %}" method="post">
+                {% csrf_token %}
+
+                <p>Introduza o seu username: <input type="text" name="username" placeholder="Username"></p>
+                <p>Introduza a sua password: <input type="password" name="password" placeholder="Password"></p>
+
+                <input type="submit" value="Entrar!" class="btnSubmit">
+            </form>
+            {% if message %}
+                {{ message }}
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

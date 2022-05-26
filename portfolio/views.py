@@ -3,6 +3,9 @@ from django.shortcuts import render
 import datetime
 from django.urls import reverse
 
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
+
 # Create your views here.
 from .forms import PostForm
 from .models import Post
@@ -12,7 +15,6 @@ from .forms import QuizzForm
 from .forms import Formacao
 from .forms import Noticias
 from .forms import Tecnologias
-
 
 from .funcoesQuizz import desenha_grafico_resultados
 
@@ -72,6 +74,30 @@ def blog_view(request):
     return render(request, 'portfolio/blog.html', context)
 
 
+def login_view(request):
+    if request.method == "POST":
+        nome_login = request.POST.get('username')
+        password_login = request.POST.get('password')
+        utilizador = authenticate(request, username=nome_login, password=password_login)
+
+        if utilizador is not None:
+            login(request, utilizador)
+            context = {'post': Post.objects.all()}
+            return render(request, 'portfolio/blog.html', context)
+        else:
+            return render(
+                request, 'portfolio/login.html',
+                {'message': "Credenciais Invalidas"}
+            )
+
+    return render(request, 'portfolio/login.html')
+
+
+def logout_view(request):
+    logout(request)
+    return render(request, 'portfolio/login.html')
+
+
 # PÁGINA DO QUIZZ
 def quizz_view(request):
     desenha_grafico_resultados(Quizz.objects.all())
@@ -101,6 +127,7 @@ def view_novo_post(request):
     return render(request, 'portfolio/nova.html', context)
 
 
+@login_required
 def view_editar_post(request, post_id):
     post = Post.objects.get(id=post_id)
     form = PostForm(request.POST or None, instance=post)
@@ -113,6 +140,7 @@ def view_editar_post(request, post_id):
     return render(request, 'portfolio/edita.html', context)
 
 
+@login_required
 def view_apaga_post(request, post_id):
     Post.objects.get(id=post_id).delete()
     return HttpResponseRedirect(reverse('portfolio:blog'))
