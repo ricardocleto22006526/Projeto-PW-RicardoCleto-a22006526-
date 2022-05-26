@@ -91,19 +91,18 @@ h1{
 }
 
 .divRetangulos .Diagrama{
-    width: 1000px;
-    height: 550px;
+    width: auto;
+    height: auto;
     box-shadow: 5px 2px 3px 7px Black;
     border-radius: 10px;
     background-color: LightGray;
     padding: 20px;
     margin: 7px;
+    margin-left: auto;
 
 
     --margin-right: 30px;
     --margin-left: 15%;
 
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+
 }
