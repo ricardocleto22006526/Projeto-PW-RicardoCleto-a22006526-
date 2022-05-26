@@ -52,12 +52,13 @@
     height: auto;
     width: auto;
     margin-top: -100px;
+    margin-left: auto;
 }
 
 .divRetangulos .post{
     height: auto;
     width: 600px;
-    margin-left: 35%;
+    margin-left: auto;
 }
 
 form{
