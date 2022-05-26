@@ -83,7 +83,8 @@
     position: relative;
     width: 550px;
     height: 200px;
-    margin-left: 2%;
+    margin-left: auto;
+    margin-bottom: auto;
 }
 
 .divRetangulos div .semestres2{
@@ -91,7 +92,8 @@
     position: relative;
     width: 550px;
     height: 200px;
-    margin-left: 54%;
+    margin-right: auto;
+    margin-bottom: auto;
     bottom: 55%;
 }
 
