@@ -31,6 +31,8 @@
 
 .textoDentroDivRetangulos h3{
     text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .textoDentroDivRetangulos p{
@@ -99,10 +101,4 @@ h1{
     padding: 20px;
     margin: 7px;
     margin-left: auto;
-
-
-    --margin-right: 30px;
-    --margin-left: 15%;
-
-
 }
