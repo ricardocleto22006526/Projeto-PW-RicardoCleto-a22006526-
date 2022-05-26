@@ -74,14 +74,9 @@
     margin-left: 20%;
 }
 
-@media only screen and (min-width: 801px) {
-
-    .textoDentroDivRetangulos div img{
-        margin-left: 12%;
-    }
-
-}
 
 .textoDentroDivRetangulos div img{
     margin-left: 5%;
+    width: auto;
+    height: auto;
 }
