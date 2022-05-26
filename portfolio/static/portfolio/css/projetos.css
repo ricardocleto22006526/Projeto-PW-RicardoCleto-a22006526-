@@ -67,8 +67,12 @@
 }
 
 .textoDentroDivRetangulos div{
+    width: 50%;
+    margin: 0 auto;
+
+
     height: auto;
-    width: 350px;
+    --width: 350px;
     position: relative;
     margin-left: 20%;
 }
