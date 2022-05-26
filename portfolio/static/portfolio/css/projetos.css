@@ -76,7 +76,9 @@
 
 
 .textoDentroDivRetangulos div img{
+    display:block;
+    margin:auto;
     margin-left: 5%;
-    max-width: 100%;
-    max-height: 100%;
+    max-width: 300px;
+    max-height: 300px;
 }
