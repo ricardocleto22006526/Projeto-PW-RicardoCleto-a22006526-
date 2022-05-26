@@ -18,14 +18,6 @@
    gap: 17px;
 }
 
-@media (mix-width: 901px) {
-
-    .textoDentroDivRetangulos div img{
-        margin-left: 12%;
-    }
-
-}
-
 .divRetangulos div{
     width: auto;
     height: auto;
@@ -82,3 +74,14 @@
     margin-left: 20%;
 }
 
+@media (min-width: 901px) {
+
+    .textoDentroDivRetangulos div img{
+        margin-left: 12%;
+    }
+
+}
+
+.textoDentroDivRetangulos div img{
+    margin-left: 5%;
+}
