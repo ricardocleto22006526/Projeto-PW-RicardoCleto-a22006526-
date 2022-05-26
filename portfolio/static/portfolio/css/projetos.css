@@ -74,11 +74,3 @@
     margin-left: 20%;
 }
 
-
-@media (min-width: 1500px) {
-    textoDentroDivRetangulos div img{
-        height: 300px;
-        width: 500px;
-    }
-}
-
