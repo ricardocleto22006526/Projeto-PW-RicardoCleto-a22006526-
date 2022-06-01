@@ -1,0 +1,100 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Secular One', sans-serif;
+}
+
+body{
+    overflow: hidden;
+}
+
+.hero{
+    width: 100%;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 5px;
+    padding-left: 3%;
+    padding-right:3%;
+    height: 10vh;
+    background-image: url("../images/matrix.gif");
+    font-size: 1.2em;
+}
+
+.logo{
+    color: white;
+    font-size: 35px;
+    letter-spacing: 1px;
+}
+
+span{
+    color: SpringGreen;
+}
+
+nav ul li {
+    list-style-type: none;
+    display: inline-block;
+    padding: 10px 25px;
+}
+
+nav ul li a{
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    text-tranform: capitalize;
+}
+
+nav ul li a:hover{
+    color: SpringGreen;
+    transition: .4s;
+}
+
+.btn{
+    background-color: SpringGreen;
+    color: white;
+    text-decoration: none;
+    border: 2px solid transparent;
+    font-weight: bold;
+    padding: 10px 25px;
+    border-radius: 30px;
+    transition: transform .7s;
+}
+
+.btn:hover{
+    transform: scale(1.1);
+}
+
+footer {
+    position: fixed;
+    padding: 10px 10px 0px 10px;
+    bottom: 0;
+    width: 100%;
+    /* Height of the footer*/
+    height: 15px;
+    background-image: url("../images/matrix.gif");
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+.footerBackground{
+    background-color: #010400;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    margin-left: 40%;
+    margin-right: 40%;
+    padding-top: 1px;
+    height: 125%;
+    margin-top: -7px;
+}
+
+.header1{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 5;
+}

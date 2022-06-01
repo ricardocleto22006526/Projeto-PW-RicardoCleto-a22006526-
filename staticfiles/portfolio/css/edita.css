@@ -1,0 +1,74 @@
+*{
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    background-color: seagreen;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.divRetangulos div{
+    width: 95%;
+    height: 500px;
+    box-shadow: 5px 2px 3px 7px black;
+    border-radius: 10px;
+    background-color: LightGray;
+    padding: 20px;
+    margin: 7px;
+    margin-top: 100px;
+    margin-left: 15px;
+}
+
+h3{
+    font-size: 30px;
+    color: DarkGreen;
+    margin-top: 50px;
+    margin-left: 10px;
+}
+
+form{
+    font-size: 25px;
+    padding: 5px;
+    margin-left: 20px;
+    gap: 20px;
+}
+
+
+.btnSubmit{
+    margin-top: 20px;
+    background-color: Green;
+    color: white;
+    text-decoration: none;
+    border: 2px solid transparent;
+    font-weight: bold;
+    padding: 15px 35px;
+    border-radius: 30px;
+    margin-left: 10px;
+    margin-top: 20px;
+    transition: transform .7s;
+    font-size: 15px;
+}
+
+.btnSubmit:hover{
+    transform: scale(1.1);
+}
+
+
+.btnCancel{
+    margin-top: 20px;
+    background-color: Red;
+    color: white;
+    text-decoration: none;
+    border: 2px solid transparent;
+    font-weight: bold;
+    padding: 15px 35px;
+    border-radius: 30px;
+    margin-left: 10px;
+    margin-top: 20px;
+    transition: transform .7s;
+    font-size: 15px;
+}

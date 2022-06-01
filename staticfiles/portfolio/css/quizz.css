@@ -1,0 +1,70 @@
+.container{
+    display: block;
+    background-size: 100% 100%;
+    background-color: seagreen;
+    background-position: center;
+    background-size: 100% 100%;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.divRetangulos{
+   display: grid;
+   grid-template-columns: repeat(2, auto);
+   grid-template-rows: repeat(1, auto);
+   margin-top: 80px;
+   margin-left: 20px;
+   padding: 30px;
+   gap: 17px;
+}
+
+.divRetangulos div{
+    width: auto;
+    height: auto;
+    box-shadow: 5px 2px 3px 7px black;
+    border-radius: 10px;
+    background-color: LightGray;
+    padding: 20px;
+    margin: 7px;
+    padding-left: 50px;
+}
+
+.btnSubmit{
+    margin-top: 20px;
+    background-color: Green;
+    color: white;
+    text-decoration: none;
+    border: 2px solid transparent;
+    font-weight: bold;
+    padding: 10px 25px;
+    border-radius: 30px;
+    transition: transform .7s;
+}
+
+.btnSubmit:hover{
+    transform: scale(1.1);
+}
+
+
+.divRetangulos .post2{
+    height: auto;
+    width: auto;
+    margin-top: -100px;
+}
+
+.divRetangulos .post{
+    height: auto;
+    width: 600px;
+    margin-left: 35%;
+}
+
+form{
+    margin-left: 50px;
+}
+
+.errorlist{
+    display:none;
+}
+
