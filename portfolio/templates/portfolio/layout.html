@@ -11,10 +11,22 @@
 
     {% block style %}{% endblock style %}
 
+     <script>
+
+        function startTime() {
+
+          let clock = document.getElementById('time');
+
+          clock.innerHTML = new Date().toLocaleTimeString();
+
+          setTimeout(startTime, 1000);
+        }
+
+     </script>
 
 </head>
 
-<body>
+<body onload="startTime()">
 
     <!--- TASK BAR COMUM A TODOS OS FICHEIROS--->
     <header class="header1">
@@ -64,6 +76,7 @@
     -->
 
 	<main>
+
         {% block main %}
 
         {% endblock main %}
@@ -72,10 +85,14 @@
 
     <footer>
         <div class="footerBackground">
-           ULHT 2022 ©
+            <div style="margin-left: 10%;">ULHT 2022 ©</div>
+            <div id="time" style="margin-left: 10%;"></div>
         </div>
+
     </footer>
 
 </body>
+
+
 </html>
 

@@ -81,13 +81,14 @@ footer {
 }
 
 .footerBackground{
+    display: flex;
     background-color: #010400;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
-    margin-left: 40%;
-    margin-right: 40%;
-    padding-top: 1px;
+    margin-left: 42.5%;
+    margin-right: 42.5%;
+    padding-top: -10px;
     height: 125%;
     margin-top: -7px;
 }
@@ -113,4 +114,10 @@ footer {
 .btnLogout:hover{
     transform: scale(1.1);
 }
+
+.clock{
+    margin-bottom: 50px;
+}
+
+
 
