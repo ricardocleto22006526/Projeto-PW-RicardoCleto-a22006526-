@@ -11,6 +11,9 @@
 {% block main %}
 
 <div class="container">
+
+    <h1> Projetos </h1>
+
     <div class="divRetangulos">
 
         {% for projetosS in projetos %}
@@ -62,6 +65,73 @@
         {% endfor %}
 
     </div>
+
+    <h1> Trabalhos Finais de Curso (TFC)  </h1>
+
+    <div class="divRetangulos">
+
+        {% for tfcs in tfc %}
+
+            <div class="textoDentroDivRetangulos">
+
+                <h3> <u> {{tfcs.titulo}} </u> </h3>
+
+                <br>
+                <div>
+                    {% load static %}
+                    <img src="{{tfcs.imagem.url}}" alt="ERROR" >
+                </div>
+                <br><br>
+
+                <p>
+                    <span> Resumo: </span>
+                    {{tfcs.resumo}}
+                </p>
+
+                <br><br>
+
+                <p> <span> Relatório: <a href="{{tfcs.relatorio}}" class="linkGitHub"> Click here </a> </span>  </p>
+
+                <br><br>
+
+                <p>
+                    <span> Ano de realização: </span> {{tfcs.ano}}
+                </p>
+
+                <br><br>
+
+                <p>
+                    <span> Autores: </span>
+                        {% for tfc_autores in tfcs.autores.all %}
+                            <ol>
+                                <ol class="tabNomes">➥ {{ tfc_autores }} </ol>
+                            </ol>
+                        {% endfor %}
+                </p>
+
+                <br>
+
+                <p>
+                    <span> Orientadores: </span>
+                        {% for tfc_orientadores in tfcs.orientadores.all %}
+                            <ol>
+                                <ol class="tabNomes">➥ {{ tfc_orientadores }} </ol>
+                            </ol>
+                        {% endfor %}
+                </p>
+
+                <br>
+
+                <p> <span> GitHub: <a href="{{tfcs.link_github}}" class="linkGitHub"> Click here </a> </span>  </p>
+
+                <br><br>
+
+                <p> <span> Video: <a href="{{tfcs.link_video}}" class="linkGitHub"> Click here </a> </span>  </p>
+
+            </div>
+        {% endfor %}
+    </div>
+
 
 </div>
 
