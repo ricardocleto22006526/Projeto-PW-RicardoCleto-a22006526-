@@ -125,9 +125,11 @@
                 <p> <span> GitHub: <a href="{{tfcs.link_github}}" class="linkGitHub"> Click here </a> </span>  </p>
 
                 <br><br>
-
-                <p> <span> Video: <a href="{{tfcs.link_video}}" class="linkGitHub"> Click here </a> </span>  </p>
-
+                {% if tfcs.link_video %}
+                    <p> <span> Video: <a href="{{tfcs.link_video}}" class="linkGitHub"> Click here </a> </span>  </p>
+                {% else %}
+                <p> <span> Video: No video </span>  </p>
+                {% end if%}
             </div>
         {% endfor %}
     </div>
