@@ -102,7 +102,6 @@ class TrabalhosFinaisDeCurso(models.Model):
     imagem = models.ImageField(upload_to='media/', null=True)
     relatorio = models.URLField(max_length=200, blank=True)
     link_github = models.URLField(max_length=200, blank=True)
-    link_video = models.URLField(max_length=200, blank=True)
 
     def __str__(self):
         return f"Trabalho Final de Curso: {self.titulo}"

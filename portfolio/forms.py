@@ -242,7 +242,6 @@ class TrabalhosFinaisDeCursoForm(ModelForm):
             'imagem': 'Insira uma imagem do trabalho',
             'relatorio': 'Insira o link do relatorio',
             'link_github': 'Insira o link do github',
-            'link_video': 'Insira o link do video',
         }
 
         help_texts = {
