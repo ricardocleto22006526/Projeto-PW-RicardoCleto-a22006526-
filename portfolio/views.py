@@ -15,6 +15,7 @@ from .forms import QuizzForm
 from .forms import Formacao
 from .forms import Noticias
 from .forms import Tecnologias
+from .forms import TrabalhosFinaisDeCurso
 
 from .funcoesQuizz import desenha_grafico_resultados
 
@@ -63,7 +64,12 @@ def programacaoWeb_view(request):
 
 
 def projetos_view(request):
-    context = {'projetos': Projetos.objects.all(), 'pessoa': Projetos.participantes}
+    context = {'projetos': Projetos.objects.all(),
+               'pessoa': Projetos.participantes,
+               'tfc': TrabalhosFinaisDeCurso.objects.all(),
+               'tfc_autores': TrabalhosFinaisDeCurso.autores,
+               'tfc_orientadores': TrabalhosFinaisDeCurso.orientadores,
+               }
 
     return render(request, 'portfolio/projetos.html', context)
 

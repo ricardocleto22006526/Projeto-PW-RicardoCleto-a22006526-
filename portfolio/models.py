@@ -91,3 +91,18 @@ class Tecnologias(models.Model):
 
     def __str__(self):
         return f"Tecnologia: {self.nome}"
+
+
+class TrabalhosFinaisDeCurso(models.Model):
+    autores = models.ManyToManyField(Pessoa, related_name='autores')
+    orientadores = models.ManyToManyField(Pessoa, related_name='orientadores')
+    ano = models.IntegerField(default=0)
+    titulo = models.CharField(max_length=100)
+    resumo = models.CharField(max_length=400)
+    imagem = models.ImageField(upload_to='media/', null=True)
+    relatorio = models.URLField(max_length=200, blank=True)
+    link_github = models.URLField(max_length=200, blank=True)
+    link_video = models.URLField(max_length=200, blank=True)
+
+    def __str__(self):
+        return f"Trabalho Final de Curso: {self.titulo}"

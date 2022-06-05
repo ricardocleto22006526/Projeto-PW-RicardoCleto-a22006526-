@@ -8,6 +8,7 @@ from .models import Formacao
 from .models import Cadeiras
 from .models import Noticias
 from .models import Tecnologias
+from .models import TrabalhosFinaisDeCurso
 
 
 class PostForm(ModelForm):
@@ -221,4 +222,28 @@ class TecnologiasForm(ModelForm):
 
         help_texts = {
 
+        }
+
+class TrabalhosFinaisDeCursoForm(ModelForm):
+    class Meta:
+        model = TrabalhosFinaisDeCurso
+        fields = '__all__'
+
+        # ferramentas
+        widgets = {
+        }
+
+        labels = {
+            'autores': 'Autor(es)',
+            'orientadores': 'orientadores',
+            'ano': 'Ano de criação do trabalho',
+            'titulo': 'Título',
+            'resumo': 'Insira um pequeno resumo',
+            'imagem': 'Insira uma imagem do trabalho',
+            'relatorio': 'Insira o link do relatorio',
+            'link_github': 'Insira o link do github',
+            'link_video': 'Insira o link do video',
+        }
+
+        help_texts = {
         }

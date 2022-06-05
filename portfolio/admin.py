@@ -9,6 +9,7 @@ from .models import Formacao
 from .models import Cadeiras
 from .models import Noticias
 from .models import Tecnologias
+from .models import TrabalhosFinaisDeCurso
 
 
 class ProjetosHorizontal(admin.ModelAdmin):
@@ -17,6 +18,9 @@ class ProjetosHorizontal(admin.ModelAdmin):
 
 class CadeirasHorizontal(admin.ModelAdmin):
     filter_horizontal = ('cadeiras',)
+
+class TFCHorizontal(admin.ModelAdmin):
+    filter_horizontal = ('autores', 'orientadores',)
 
 
 admin.site.register(Post)
@@ -27,3 +31,4 @@ admin.site.register(Formacao, CadeirasHorizontal)
 admin.site.register(Cadeiras)
 admin.site.register(Noticias)
 admin.site.register(Tecnologias)
+admin.site.register(TrabalhosFinaisDeCurso, TFCHorizontal)
