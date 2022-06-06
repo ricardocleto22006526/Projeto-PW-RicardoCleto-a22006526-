@@ -1,0 +1,46 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.container{
+    background-color: seagreen;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+
+}
+
+
+#issMap {
+    margin-left: 15px;
+    margin-right: 15px;
+    height: 500px;
+    margin-bottom: 50px;
+    border-radius: 20px;
+}
+
+.tituloAPI{
+    margin-top: 100px;
+    text-align: center;
+    color: LightSeaGreen;
+    font-weight: bold;
+    font-size: 50px;
+}
+
+.SubtituloAPI{
+    margin-top: 5px;
+    text-align: center;
+    color: LawnGreen;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+
+p{
+    margin-top: 25px;
+    text-align: center;
+    color: Black;
+    font-weight: bold;
+    font-size: 27px;
+}

@@ -80,6 +80,11 @@ def blog_view(request):
     return render(request, 'portfolio/blog.html', context)
 
 
+def API_EEI_view(request):
+
+    return render(request, 'portfolio/estacaoEspacialEEI.html')
+
+
 def login_view(request):
     if request.method == "POST":
         nome_login = request.POST.get('username')

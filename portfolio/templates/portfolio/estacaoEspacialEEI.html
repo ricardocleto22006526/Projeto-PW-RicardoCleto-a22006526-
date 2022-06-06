@@ -1,0 +1,135 @@
+
+<link href="https://fonts.googleapis.com/css2?family=Secular+One&display=swap" rel="stylesheet">
+
+
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'portfolio/css/layout.css' %}"/>
+
+
+ <header class="header1">
+    <div class="hero">
+        <nav>
+            <h2 class="logo">Ricardo <span>Cleto</span></h2>
+            <ul>
+                <li> <a href="{% url 'portfolio:home' %}">Home</a> </li>
+                <li> <a href="{% url 'portfolio:programacaoWeb' %}">ProgramaçãoWeb</a> </li>
+                <li> <a href="{% url 'portfolio:quizz' %}">Quizz</a> </li>
+                <li> <a href="{% url 'portfolio:formação' %}">Formação</a> </li>
+                <li> <a href="{% url 'portfolio:projetos' %}">Projetos</a> </li>
+                <li> <a href="{% url 'portfolio:blog' %}">Blog</a> </li>
+                    <li> <a href="{% url 'portfolio:apiEEI' %}">API(EEI)</a> </li>
+                <li> <a href="{% url 'portfolio:sobre' %}">About Me</a> </li>
+            </ul>
+                {% if not user.is_authenticated %}
+            <a href="{% url 'portfolio:login' %}" class="btn">Login</a>
+            {% endif %}
+            {% if user.is_authenticated %}
+            <a href="{% url 'portfolio:logout' %}" class="btnLogout">Logout</a>
+            {% endif %}
+        </nav>
+     </div>
+ </header>
+
+
+
+{% block head %}
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
+      integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+      integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+      crossorigin=""
+    ></script>
+
+{% endblock head %}
+
+
+
+{% block style %}
+
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'portfolio/css/estacaoEspacialEEI.css' %}"/>
+
+{% endblock style %}
+
+
+{% block main %}
+    <div class="container">
+
+        <h1 class="tituloAPI"> Real Time tracking </h1>
+        <h2 class="SubtituloAPI">🛰️ Estação Espacial Internacional 🛰️</h2>
+
+        <p>
+          latitude: <span id="lat"></span>°<br />
+          longitude: <span id="lon"></span>° <br />
+        </p>
+
+        <div id="issMap"></div>
+    </div>
+{% endblock main %}
+
+
+
+{% block script %}
+    <script>
+
+        // construcao do mapa
+        const mymap = L.map('issMap').setView([0, 0], 1.5); // Coordenadas: x=0,y=0 & zoom=2
+
+
+       // Adição dos 2 links de direitos de autor (Sites "Originais")
+        const attribution = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
+        const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+        const tiles = L.tileLayer(tileUrl, { attribution });
+        tiles.addTo(mymap)
+
+
+        // Icon do satelite
+        const issIcon = L.icon({
+
+            iconUrl: '../static/portfolio/images/EEI.png',
+            iconSize: [75, 48],
+            iconAnchor: [37.5, 24]
+
+        });
+
+
+        // Marcador = Ponto central localizador do Satelite
+        let marker = L.marker([0, 0], { icon: issIcon }).addTo(mymap);
+
+
+        // Guardamos o link da API
+        const api_url = 'https://api.wheretheiss.at/v1/satellites/25544';
+
+
+        // Funcao que trabalha os dados da API
+        async function getISS() {
+            // Chamar a API atraves do Fetch
+            const response = await fetch(api_url);
+
+            // Obter os dados da API
+            const data = await response.json();
+
+            // Metodo que guarda os dados nas 2 variaveis criadas
+            const { latitude, longitude } = data;
+
+            // Colocar sempre visão e zoom nas coordenadas correspondentes ao satelite
+            mymap.setView([latitude, longitude], mymap.getZoom());
+            marker.setLatLng([latitude, longitude]);
+
+            // Variaveis informativas com 2 casa decimais
+            document.getElementById('lat').textContent = latitude.toFixed(2);
+            document.getElementById('lon').textContent = longitude.toFixed(2);
+        }
+
+
+        //Chamamos a funcao que gera tudo e atualizamos os dados de 1 em 1 segundo
+        getISS();
+        setInterval(getISS, 1000);
+    </script>
+{% endblock script %}

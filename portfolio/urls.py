@@ -21,4 +21,5 @@ urlpatterns = [
     path('programacaoWeb', views.programacaoWeb_view, name='programacaoWeb'),
     path('login', views.login_view, name='login'),
     path('logout', views.logout_view, name='logout'),
+    path('apiEEI', views.API_EEI_view, name='apiEEI'),
 ]
