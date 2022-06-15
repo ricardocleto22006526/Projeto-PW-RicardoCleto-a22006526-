@@ -16,11 +16,12 @@
    margin-top: 80px;
    margin-left: 20px;
    padding: 30px;
+   margin-bottom: 80px;
 }
 
 .divRetangulos div{
     width: 95%;
-    height: 715px;
+    height: 1350px;
     box-shadow: 5px 2px 3px 7px black;
     border-radius: 10px;
     background-color: LightGray;
@@ -109,4 +110,14 @@
 
 .Socials .NoClass:hover{
     color: DarkGreen;
+}
+
+iframe{
+    position: relative;
+    height: 600px;
+    width: 95%;
+    margin-top: 47%;
+    margin-left: auto;
+    margin-right: 1%;
+
 }
